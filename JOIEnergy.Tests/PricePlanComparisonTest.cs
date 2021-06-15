@@ -2,22 +2,20 @@
 using JOIEnergy.Domain;
 using JOIEnergy.Enums;
 using JOIEnergy.Services;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xunit;
-using Xunit.Abstractions;
-using Newtonsoft.Json.Linq;
 
 namespace JOIEnergy.Tests
 {
     public class PricePlanComparisonTest
     {
-        private MeterReadingService meterReadingService;
-        private PricePlanComparatorController controller;
-        private Dictionary<string, Supplier> smartMeterToPricePlanAccounts = new Dictionary<string, Supplier>();
-        private static String SMART_METER_ID = "smart-meter-id";
+        private readonly MeterReadingService meterReadingService;
+        private readonly PricePlanComparatorController controller;
+        private readonly Dictionary<string, Supplier> smartMeterToPricePlanAccounts = new Dictionary<string, Supplier>();
+        private static readonly String SMART_METER_ID = "smart-meter-id";
 
         public PricePlanComparisonTest()
         {

@@ -1,7 +1,7 @@
-﻿using System;
+﻿using JOIEnergy.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using JOIEnergy.Domain;
 
 namespace JOIEnergy.Services
 {
@@ -10,7 +10,7 @@ namespace JOIEnergy.Services
         public interface Debug { void Log(string s); };
 
         private readonly List<PricePlan> _pricePlans;
-        private IMeterReadingService _meterReadingService;
+        private readonly IMeterReadingService _meterReadingService;
 
         public PricePlanService(List<PricePlan> pricePlan, IMeterReadingService meterReadingService)
         {

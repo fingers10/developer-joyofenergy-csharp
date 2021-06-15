@@ -1,12 +1,11 @@
-﻿using System;
+﻿using JOIEnergy.Enums;
 using System.Collections.Generic;
-using JOIEnergy.Enums;
 
 namespace JOIEnergy.Services
 {
     public class AccountService : Dictionary<string, Supplier>, IAccountService
     { 
-        private Dictionary<string, Supplier> _smartMeterToPricePlanAccounts;
+        private readonly Dictionary<string, Supplier> _smartMeterToPricePlanAccounts;
 
         public AccountService(Dictionary<string, Supplier> smartMeterToPricePlanAccounts) {
             _smartMeterToPricePlanAccounts = smartMeterToPricePlanAccounts;

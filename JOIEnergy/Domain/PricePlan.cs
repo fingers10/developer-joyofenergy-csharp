@@ -1,7 +1,7 @@
-﻿using System;
+﻿using JOIEnergy.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using JOIEnergy.Enums;
 
 namespace JOIEnergy.Domain
 {

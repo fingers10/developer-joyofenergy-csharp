@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using JOIEnergy.Domain;
+﻿using JOIEnergy.Domain;
 using JOIEnergy.Enums;
 using JOIEnergy.Generator;
 using JOIEnergy.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 
 namespace JOIEnergy
 {
@@ -193,12 +190,14 @@ namespace JOIEnergy
         {
             get
             {
-                Dictionary<String, Supplier> smartMeterToPricePlanAccounts = new Dictionary<string, Supplier>();
-                smartMeterToPricePlanAccounts.Add("smart-meter-0", Supplier.DrEvilsDarkEnergy);
-                smartMeterToPricePlanAccounts.Add("smart-meter-1", Supplier.TheGreenEco);
-                smartMeterToPricePlanAccounts.Add("smart-meter-2", Supplier.DrEvilsDarkEnergy);
-                smartMeterToPricePlanAccounts.Add("smart-meter-3", Supplier.PowerForEveryone);
-                smartMeterToPricePlanAccounts.Add("smart-meter-4", Supplier.TheGreenEco);
+                Dictionary<String, Supplier> smartMeterToPricePlanAccounts = new Dictionary<string, Supplier>
+                {
+                    { "smart-meter-0", Supplier.DrEvilsDarkEnergy },
+                    { "smart-meter-1", Supplier.TheGreenEco },
+                    { "smart-meter-2", Supplier.DrEvilsDarkEnergy },
+                    { "smart-meter-3", Supplier.PowerForEveryone },
+                    { "smart-meter-4", Supplier.TheGreenEco }
+                };
                 return smartMeterToPricePlanAccounts;
             }
         }

@@ -1,7 +1,7 @@
-using System;
-using System.Collections.Generic;
 using JOIEnergy.Enums;
 using JOIEnergy.Services;
+using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace JOIEnergy.Tests
@@ -11,12 +11,14 @@ namespace JOIEnergy.Tests
         private const Supplier PRICE_PLAN_ID = Supplier.PowerForEveryone;
         private const String SMART_METER_ID = "smart-meter-id";
 
-        private AccountService accountService;
+        private readonly AccountService accountService;
 
         public AccountServiceTest()
         {
-            Dictionary<String, Supplier> smartMeterToPricePlanAccounts = new Dictionary<string, Supplier>();
-            smartMeterToPricePlanAccounts.Add(SMART_METER_ID, PRICE_PLAN_ID);
+            Dictionary<String, Supplier> smartMeterToPricePlanAccounts = new Dictionary<string, Supplier>
+            {
+                { SMART_METER_ID, PRICE_PLAN_ID }
+            };
 
             accountService = new AccountService(smartMeterToPricePlanAccounts);
         }
