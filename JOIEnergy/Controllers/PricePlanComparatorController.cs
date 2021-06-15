@@ -8,6 +8,8 @@ using Newtonsoft.Json.Linq;
 
 namespace JOIEnergy.Controllers
 {
+    [ApiController]
+    [ApiVersion("1.0")]
     [Route("price-plans")]
     public class PricePlanComparatorController : Controller
     {

@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JOIEnergy.Controllers
 {
+    [ApiController]
+    [ApiVersion("1.0")]
     [Route("readings")]
     public class MeterReadingController : Controller
     {
