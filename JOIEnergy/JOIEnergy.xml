@@ -4,5 +4,33 @@
         <name>JOIEnergy</name>
     </assembly>
     <members>
+        <member name="M:JOIEnergy.Controllers.MeterReadingController.Post(JOIEnergy.Domain.MeterReadings)">
+            <summary>
+            Adds/Updates the electrical reading to the given smart meter id
+            </summary>
+            <param name="meterReadings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JOIEnergy.Controllers.MeterReadingController.GetReading(System.String)">
+            <summary>
+            Returns reading for a given smart meter id
+            </summary>
+            <param name="smartMeterId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JOIEnergy.Controllers.PricePlanComparatorController.CalculatedCostForEachPricePlan(System.String)">
+            <summary>
+            Gets the price comparison for given smart meter id against all providers(plan id)
+            </summary>
+            <param name="smartMeterId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JOIEnergy.Controllers.PricePlanComparatorController.RecommendCheapestPricePlans(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Gets the paginated price comparison for given smart meter id against all providers(plan id)
+            </summary>
+            <param name="smartMeterId"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

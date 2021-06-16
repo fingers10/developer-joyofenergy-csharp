@@ -21,6 +21,11 @@ namespace JOIEnergy.Controllers
             this._accountService = accountService;
         }
 
+        /// <summary>
+        /// Gets the price comparison for given smart meter id against all providers(plan id)
+        /// </summary>
+        /// <param name="smartMeterId"></param>
+        /// <returns></returns>
         [HttpGet("compare-all/{smartMeterId}")]
         public ObjectResult CalculatedCostForEachPricePlan(string smartMeterId)
         {
@@ -39,6 +44,11 @@ namespace JOIEnergy.Controllers
                 new NotFoundObjectResult(string.Format("Smart Meter ID ({0}) not found", smartMeterId));
         }
 
+        /// <summary>
+        /// Gets the sorted and paginated price comparison for given smart meter id against all providers(plan id)
+        /// </summary>
+        /// <param name="smartMeterId"></param>
+        /// <returns></returns>
         [HttpGet("recommend/{smartMeterId}")]
         public ObjectResult RecommendCheapestPricePlans(string smartMeterId, int? limit = null) {
             var consumptionForPricePlans = _pricePlanService.GetConsumptionCostOfElectricityReadingsForEachPricePlan(smartMeterId);

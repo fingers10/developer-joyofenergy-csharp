@@ -20,7 +20,13 @@ namespace JOIEnergy.Controllers
         {
             _meterReadingService = meterReadingService;
         }
+
         // POST api/values
+        /// <summary>
+        /// Adds/Updates the electrical reading to the given smart meter id
+        /// </summary>
+        /// <param name="meterReadings"></param>
+        /// <returns></returns>
         [HttpPost ("store")]
         public ObjectResult Post([FromBody]MeterReadings meterReadings)
         {
@@ -28,6 +34,7 @@ namespace JOIEnergy.Controllers
                 return new BadRequestObjectResult("Internal Server Error");
             }
             _meterReadingService.StoreReadings(meterReadings.SmartMeterId,meterReadings.ElectricityReadings);
+            
             return new OkObjectResult("{}");
         }
 
@@ -39,6 +46,11 @@ namespace JOIEnergy.Controllers
                     && electricityReadings != null && electricityReadings.Any();
         }
 
+        /// <summary>
+        /// Returns reading for a given smart meter id
+        /// </summary>
+        /// <param name="smartMeterId"></param>
+        /// <returns></returns>
         [HttpGet("read/{smartMeterId}")]
         public ObjectResult GetReading(string smartMeterId) {
             return new OkObjectResult(_meterReadingService.GetReadings(smartMeterId));
